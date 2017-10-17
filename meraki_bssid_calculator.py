@@ -1,5 +1,21 @@
-#MerakiBssidCalculator.calculate(mr['model'],mr['mac'],1)
-
+# MerakiBssidCalculator is a utility for figuring out a bssid for your Meraki ap's
+# 
+# Full documentation on how these calculations are made can be found in Meraki's online documentation:
+# https://documentation.meraki.com/MR/WiFi_Basics_and_Best_Practices/Calculating_Cisco_Meraki_BSSID_MAC_Addresses
+# 
+# Based on that document, the calculator defines 3 families of access points that have unique bssid calculations.
+# To calculate the bssid, each octet of the AP's mac is offset by a value defined per oui per radio per ssid 
+#
+# These are statically configured as 'offset_families' and combined with a provided ap mac and ssid number
+#
+# Use the calculator as a stateless function:
+# MerakiBssidCalculator.calculate(ap_model,ap_mac,ssid_number)
+#
+# For example:
+# MerakiBssidCalculator.calculate("MR53","0c:8d:db:00:00:00",12)
+#
+# will output the bssid for each radio:
+# {'2.4': '22:8d:db:00:00:00', '5': '22:8d:cb:00:00:00'}
 
 class MerakiBssidCalculator:
     offset_families = {
