@@ -1,4 +1,4 @@
-# MerakiBssidCalculator is a utility for figuring out a bssid for your Meraki ap's
+# MerakiBssidCalculator is a utility for figuring out a bssid for your Meraki AP's
 # 
 # Full documentation on how these calculations are made can be found in Meraki's online documentation:
 # https://documentation.meraki.com/MR/WiFi_Basics_and_Best_Practices/Calculating_Cisco_Meraki_BSSID_MAC_Addresses
