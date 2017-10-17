@@ -333,6 +333,7 @@ class MerakiBssidCalculator:
     }
     def ap_offset(ap_model):
         return MerakiBssidCalculator.offset_families[MerakiBssidCalculator.ap_families[ap_model]]
+    
     def calculate(ap_model,ap_mac,ssid_number):
         bssids = { 
             "2.4": MerakiBssidCalculator.calculate_bssid(
@@ -345,12 +346,14 @@ class MerakiBssidCalculator:
             )
         }
         return bssids
+
     def calculate_bssid(ap_mac,offsets):
         ap_octets = ap_mac.split(":")
         bssid_octets = []
         for i,octet in enumerate(ap_octets):
             bssid_octets.append(MerakiBssidCalculator.calculate_octet(octet,offsets[i+1]))
         return ":".join(bssid_octets)
+
     def calculate_octet(octet,offset):
         return hex(int(octet,16) + offset)[2:].zfill(2)
 
