@@ -1,3 +1,18 @@
+# MerakiBssidGetter is a utility for calculating and exporting bssid information for an organization.
+#
+# Use it as an object and initialize with your dashboard api key:
+#   bssid_getter = MerakiBssidGetter('your-api-key-here')
+#
+# Once initialized you can get your bssid information in memory or export it to a csv
+#   working with it:
+#   bssid_info = bssid_getter.get_org_bssids('org-id-here')
+#
+#   exporting to csv:
+#   bssid_getter.export_org_bssids_to_csv('org-id-here','output-filename.csv')
+#
+# You'll need the id for the organization you want the bssid information for.  
+# You can get this information by using the meraki lib function: meraki.myorgaccess('your-api-key')
+
 from meraki import meraki
 from meraki_bssid_calculator import MerakiBssidCalculator
 import json
