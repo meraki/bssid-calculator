@@ -129,7 +129,7 @@ class MerakiBssidCalculator:
                     15: {1:0x02,2:0x00,3:0x50,4:0x00,5:0x00,6:0x0E} 
                 }
             },
-            "88:15:14": {
+            "88:15:44": {
                 "2.4": {
                     1: {1:0x02,2:0x00,3:-0x40,4:0x00,5:0x00,6:0x00},
                     2: {1:0x02,2:0x00,3:-0x40,4:0x00,5:0x00,6:0x01},
@@ -333,7 +333,7 @@ class MerakiBssidCalculator:
     }
     def ap_offset(ap_model):
         return MerakiBssidCalculator.offset_families[MerakiBssidCalculator.ap_families[ap_model]]
-    
+
     def calculate(ap_model,ap_mac,ssid_number):
         bssids = { 
             "2.4": MerakiBssidCalculator.calculate_bssid(

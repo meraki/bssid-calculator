@@ -64,6 +64,7 @@ class MerakiBssidGetter:
                 output_writer.writerow(line)
 
     def __get_bssids_for_network(self,network):
+        print('Getting bssid\'s for network: ' + network['name'])
         aps = self.__get_aps_for_network(network)
         if (len(aps) > 0):
             ssids = self.__get_ssids_for_network(network)
